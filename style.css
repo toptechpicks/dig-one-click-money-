@@ -1,0 +1,411 @@
+/* ===========================
+   Global Styles
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #ec4899;
+    --accent-color: #f59e0b;
+    --text-color: #1f2937;
+    --light-bg: #f9fafb;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+    animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   Header
+   =========================== */
+
+header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+}
+
+header .subtitle {
+    font-size: 1.1em;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* ===========================
+   Main Content
+   =========================== */
+
+main {
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+section h3 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* ===========================
+   Info Section (Steps)
+   =========================== */
+
+.steps {
+    list-style: none;
+    counter-reset: step-counter;
+}
+
+.steps li {
+    counter-increment: step-counter;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    background: var(--light-bg);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.steps li::before {
+    content: counter(step-counter);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    margin-right: 15px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.steps li:hover {
+    background: #f3f4f6;
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+}
+
+/* ===========================
+   Reward Section
+   =========================== */
+
+.reward-section {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.reward-card {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    min-width: 250px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.reward-card h3 {
+    color: var(--white);
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.reward-amount {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.reward-subtext {
+    font-size: 1em;
+    opacity: 0.9;
+}
+
+/* ===========================
+   Action Section (Button)
+   =========================== */
+
+.action-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.claim-button {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    border: none;
+    padding: 18px 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+.claim-button:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.claim-button:active {
+    transform: translateY(-1px);
+}
+
+.claim-info {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #6b7280;
+}
+
+/* ===========================
+   Features Section
+   =========================== */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.feature {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.feature:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.feature .icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.feature p {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* ===========================
+   Wallet Section
+   =========================== */
+
+.wallet-address {
+    background: var(--light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.wallet-address p {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.wallet-address code {
+    display: block;
+    background: var(--white);
+    padding: 15px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    word-break: break-all;
+    margin-bottom: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.copy-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* ===========================
+   Footer Section
+   =========================== */
+
+.footer-section {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    color: #6b7280;
+}
+
+.footer-section p {
+    margin-bottom: 8px;
+    font-size: 0.95em;
+}
+
+.footer-section small {
+    font-size: 0.85em;
+    color: #9ca3af;
+}
+
+/* ===========================
+   Notification
+   =========================== */
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    transform: translateX(400px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.notification.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header .subtitle {
+        font-size: 1em;
+    }
+
+    main {
+        padding: 30px 15px;
+    }
+
+    .reward-amount {
+        font-size: 2em;
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .claim-button {
+        padding: 15px 30px;
+        font-size: 1.1em;
+    }
+
+    .notification {
+        left: 20px;
+        right: 20px;
+        max-width: none;
+    }
+}
+
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .reward-card {
+        min-width: 200px;
+        padding: 20px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+}
