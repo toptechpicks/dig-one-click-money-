@@ -24,14 +24,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # No build needed for plain HTML – just upload everything
+      # 👇 Optional: list files for debugging (remove after verification)
+      - name: List files
+        run: ls -la
+
+      # 👇 Configure Pages – essential for the deployment action
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
+      # 👇 Upload the *correct* folder containing your static site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'              # uploads entire repo – change to 'dist' or 'docs' if needed
+          # If your site is in the repo root, use "."
+          # If it's in a subfolder (e.g., "docs", "dist", "public"), change to that
+          path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
