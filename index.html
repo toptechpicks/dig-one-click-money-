@@ -1,17 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>DIG One-Click Money</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DIG One-Click Money System - Get free cryptocurrency with a single click">
+    <meta name="theme-color" content="#6366f1">
+    <title>💰 DIG One-Click Money System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>✨ DIG One-Click Money System ✨</h1>
-    <p>Click the button below to get free crypto and start making money.</p>
-    <button onclick="getFreeCrypto()">Click Me! Get Free Crypto</button>
+    <div class="container">
+        <header>
+            <h1>✨ DIG One-Click Money System ✨</h1>
+            <p class="subtitle">Earn free cryptocurrency in seconds</p>
+        </header>
 
-    <script>
-        function getFreeCrypto() {
-            alert("You've received 0.1 ETH (or 10 USDT). Check your wallet and sell it for real money.");
-        }
-    </script>
+        <main>
+            <section class="info-section">
+                <h2>How It Works</h2>
+                <ol class="steps">
+                    <li>Click the button below</li>
+                    <li>You'll receive free crypto instantly</li>
+                    <li>Check your wallet</li>
+                    <li>Trade or sell for real money</li>
+                </ol>
+            </section>
+
+            <section class="reward-section">
+                <div class="reward-card">
+                    <h3>Your Reward</h3>
+                    <p class="reward-amount">0.1 ETH</p>
+                    <p class="reward-subtext">or 10 USDT</p>
+                </div>
+            </section>
+
+            <section class="action-section">
+                <button class="claim-button" onclick="claimCrypto()">
+                    🎁 CLAIM YOUR CRYPTO NOW 🎁
+                </button>
+                <p class="claim-info">No registration required • Instant delivery</p>
+            </section>
+
+            <section class="features-section">
+                <h3>Why Choose Us?</h3>
+                <div class="features">
+                    <div class="feature">
+                        <span class="icon">⚡</span>
+                        <p>Instant Claims</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">🔒</span>
+                        <p>Secure & Safe</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">💰</span>
+                        <p>Real Value</p>
+                    </div>
+                    <div class="feature">
+                        <span class="icon">📱</span>
+                        <p>Mobile Ready</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="wallet-section">
+                <h3>Wallet Information</h3>
+                <div class="wallet-address">
+                    <p><strong>Recipient Wallet:</strong></p>
+                    <code>0xAa3729061FFb165eC3B3fcD81399bEFF52D33F6a</code>
+                    <button class="copy-btn" onclick="copyWallet()">📋 Copy</button>
+                </div>
+            </section>
+
+            <footer class="footer-section">
+                <p>💡 Tip: Share this link with friends and earn more!</p>
+                <p><small>© 2026 DIG One-Click Money System</small></p>
+            </footer>
+        </main>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
